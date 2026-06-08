@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>BGT Education • Trading Community</title>
+  <meta name="description" content="Join BGT Trading Community for premium market insights, education, and high-probability trade setups.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  
+  <!-- Meta Pixel Code - Exactly as provided -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1005510705310122');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1005510705310122&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f5f9;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    .card {
+      max-width: 500px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+    }
+
+    .inner {
+      padding: 32px 28px 40px;
+    }
+
+    .profile-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      background: linear-gradient(145deg, #0f2b25, #14332c);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
+    .avatar img {
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .brand h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0a2c26;
+      margin-bottom: 6px;
+    }
+    .badge {
+      display: inline-block;
+      background: #eef9f5;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f6b58;
+      margin-bottom: 12px;
+    }
+    .subhead {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f5e50;
+      margin-bottom: 8px;
+    }
+    .desc {
+      font-size: 14px;
+      color: #4a5b66;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 90%;
+      margin: 0 auto 0 auto;
+    }
+
+    /* Telegram Button - Rocket Emoji + Effects */
+    .btn-telegram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(95deg, #0f6b4c, #17945c);
+      text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 60px;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(23, 148, 92, 0.35);
+      margin: 24px 0 28px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Shine effect */
+    .btn-telegram::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-telegram:hover::before {
+      left: 100%;
+    }
+    
+    .btn-telegram:hover {
+      background: linear-gradient(95deg, #0b5a40, #11804f);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(23, 148, 92, 0.5);
+    }
+    
+    .btn-telegram:active {
+      transform: translateY(1px);
+    }
+    
+    /* Pulse animation */
+    @keyframes gentlePulse {
+      0% { transform: scale(1); box-shadow: 0 8px 20px rgba(23, 148, 92, 0.35); }
+      50% { transform: scale(1.02); box-shadow: 0 12px 28px rgba(23, 148, 92, 0.55); }
+      100% { transform: scale(1); box-shadow: 0 8px 20px rgba(23, 148, 92, 0.35); }
+    }
+    
+    .btn-telegram {
+      animation: gentlePulse 2s infinite ease-in-out;
+    }
+    
+    .btn-telegram:hover {
+      animation: none;
+    }
+    
+    .btn-telegram .rocket-icon {
+      font-size: 24px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    
+    .btn-telegram:hover .rocket-icon {
+      transform: translateX(4px) translateY(-3px);
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 28px 0;
+    }
+    .feature-chip {
+      flex: 1;
+      min-width: 130px;
+      background: #f7fafc;
+      border-radius: 20px;
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid #e2edf0;
+      transition: all 0.2s;
+    }
+    .feature-chip:hover {
+      transform: translateY(-2px);
+      border-color: #17945c40;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .feature-chip span {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .feature-chip h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1b2f3a;
+      margin-bottom: 4px;
+    }
+    .feature-chip p {
+      font-size: 12px;
+      color: #5f7c8a;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      background: #f8fbfd;
+      border-radius: 28px;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      border: 1px solid #e1ecf0;
+    }
+    .stat {
+      text-align: center;
+      flex: 1;
+    }
+    .stat .number {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1b6b58;
+    }
+    .stat .label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #6f8f9c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: #7a939f;
+      text-align: center;
+      margin-top: 8px;
+      line-height: 1.5;
+      border-top: 1px solid #e2ecf0;
+      padding-top: 20px;
+    }
+    .footer-note strong {
+      color: #1f6e58;
+      font-weight: 700;
+    }
+    .disclaimer {
+      font-size: 10px;
+      color: #8ea5b0;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .inner {
+        padding: 24px 20px 32px;
+      }
+      .brand h1 {
+        font-size: 30px;
+      }
+      .btn-telegram {
+        padding: 14px 20px;
+        font-size: 16px;
+        margin: 20px 0 24px 0;
+      }
+      .btn-telegram .rocket-icon {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="inner">
+    <!-- Profile - image path "bgt.jpg" -->
+    <div class="profile-row">
+      <div class="avatar">
+        <img src="bgt.jpg" alt="BGT Founder">
+      </div>
+    </div>
+
+    <!-- Brand & Subtext -->
+    <div class="brand">
+      <div class="badge">📈 Premium Trading Community</div>
+      <h1>BGT • Education</h1>
+      <div class="subhead">Serious traders • High accuracy insights</div>
+      <div class="desc">
+        Join a community focused on consistency, education, and real market flow. Daily analysis, structured lessons, and live trade discussions.
+      </div>
+    </div>
+
+    <!-- Telegram Button - Rocket Emoji + Effects -->
+    <a href="https://t.me/+f1jCfRKvaNAzZjRl" 
+       id="telegramLink"
+       class="btn-telegram"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="rocket-icon">🚀</span>
+      Join Telegram Channel →
+    </a>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature-chip">
+        <span>📊</span>
+        <h4>Market Insights</h4>
+        <p>Clear trend & key levels</p>
+      </div>
+      <div class="feature-chip">
+        <span>🎓</span>
+        <h4>Step-by-step</h4>
+        <p>Trading education & psychology</p>
+      </div>
+      <div class="feature-chip">
+        <span>💎</span>
+        <h4>Premium Setups</h4>
+        <p>High probability trades</p>
+      </div>
+      <div class="feature-chip">
+        <span>📈</span>
+        <h4>Long-term Growth</h4>
+        <p>Consistency over hype</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="number">87%</div>
+        <div class="label">win rate (2025)</div>
+      </div>
+      <div class="stat">
+        <div class="number">2.1k+</div>
+        <div class="label">members</div>
+      </div>
+      <div class="stat">
+        <div class="number">24/7</div>
+        <div class="label">community chat</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      Managed by <strong>BGT Group</strong> — Educational & research purposes only.
+    </div>
+    <div class="disclaimer">
+      ⚠️ Disclaimer: Not investment advice. Trading involves risk. Past performance does not guarantee future results.
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const mainBtn = document.getElementById('telegramLink');
+    if (mainBtn) {
+      let clickTimer = null;
+      mainBtn.addEventListener('click', function(e) {
+        clickTimer = setTimeout(() => {
+          const reminder = document.createElement('div');
+          reminder.innerText = '🔁 Telegram didn\'t open? Make sure you have Telegram installed.';
+          reminder.style.position = 'fixed';
+          reminder.style.bottom = '30px';
+          reminder.style.left = '20px';
+          reminder.style.right = '20px';
+          reminder.style.maxWidth = '400px';
+          reminder.style.margin = '0 auto';
+          reminder.style.backgroundColor = '#1c3b33';
+          reminder.style.color = '#e2f3ef';
+          reminder.style.padding = '12px 18px';
+          reminder.style.borderRadius = '60px';
+          reminder.style.fontSize = '14px';
+          reminder.style.fontWeight = '500';
+          reminder.style.textAlign = 'center';
+          reminder.style.fontFamily = 'Inter, sans-serif';
+          reminder.style.zIndex = '9999';
+          reminder.style.boxShadow = '0 4px 16px rgba(0,0,0,0.1)';
+          document.body.appendChild(reminder);
+          setTimeout(() => reminder.remove(), 5000);
+        }, 1200);
+        
+        const onBlur = () => {
+          if (clickTimer) clearTimeout(clickTimer);
+          window.removeEventListener('blur', onBlur);
+        };
+        window.addEventListener('blur', onBlur);
+        
+        const onVisibility = () => {
+          if (document.hidden && clickTimer) clearTimeout(clickTimer);
+          document.removeEventListener('visibilitychange', onVisibility);
+        };
+        document.addEventListener('visibilitychange', onVisibility);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
